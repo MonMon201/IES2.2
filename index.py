@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import rsg
 import f
+import additionalTask as at
 
 n = 12
 W = 2400
@@ -11,6 +12,8 @@ time = range(N)
 signal = rsg.getRandomSignal(n, W, N)
 
 s = f.f(signal)
+my, nump = at.compareTime(n, W, N)
+print("my fft: ", my, ", numpy fft: ", nump)
 
 fig, (ax1, ax2) = plt.subplots(2, 1)
 fig.suptitle('Lab 2.2')
